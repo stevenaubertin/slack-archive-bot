@@ -5,11 +5,8 @@ import os
 import sqlite3
 import time
 import traceback
-
 from slackclient import SlackClient
 from websocket import WebSocketConnectionClosedException
-
-
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-d', '--database-path', default='slack.sqlite', help=(
