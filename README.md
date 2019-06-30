@@ -11,18 +11,18 @@ further back than 10,000 messages.
         pip install -r requirements.txt
 
 1. [Export your team's slack history.](https://get.slack.help/hc/en-us/articles/201658943-Export-your-team-s-Slack-history)
-Download the archive and export it to a directory. Then run `import_archive.py`
+Download the archive, and extract/decompress it to a directory. Then run `import.py`
 on the directory.  For example:
 
         python import.py slack_archives
 
     This will create a file `slack.sqlite`.
 1. Create a new [bot user](https://api.slack.com/bot-users) on your slack
-channel and get the API key. Start the bot with:
+channel, and get the "[Bot User OAuth Access Token](https://api.slack.com/docs/token-types)" / API key. 
+1. Create an environment variable on your system called "SLACK_API_TOKEN" equal to the just mentioned access token. Note that after setting said environment variable, you may need to restart your CLI/IDE for it to take effect.
+1. Start the bot with:
 
-        export SLACK_API_TOKEN=<API_TOKEN> && python archivebot.py
-
-    Where API_TOKEN is the token you got when creating the bot user.
+        python archivebot.py
 
 ## Archiving New Messages
 
@@ -31,7 +31,7 @@ is invited to.  To add the bot to your channels:
 
         /invite @ArchiveBot
 
-If @ArchiveBot is the name you gave you bot user.
+If @ArchiveBot is the name you gave your bot user.
 
 ## Searching
 
